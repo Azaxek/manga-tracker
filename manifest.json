@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Manga Tracker",
+  "version": "0.1.0",
+  "description": "Remembers your manga chapter, flags new chapters. Local only: no account, no server.",
+  "permissions": ["storage", "unlimitedStorage", "alarms", "notifications", "scripting", "activeTab"],
+  "host_permissions": ["https://graphql.anilist.co/*", "https://api.mangadex.org/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_icon": "icon.png" },
+  "options_page": "options.html",
+  "icons": { "128": "icon.png" }
+}
