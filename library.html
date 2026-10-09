@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Manga Tracker library</title>
+<link rel="stylesheet" href="style.css">
+<header class="bar">
+  <h1>Library</h1>
+  <input id="q" type="search" placeholder="Search your library  ( / )">
+  <select id="sort" title="Sort">
+    <option value="recent">Recently read</option>
+    <option value="unread">New chapters first</option>
+    <option value="title">Title A–Z</option>
+    <option value="added">Recently added</option>
+  </select>
+  <form id="add"><input name="t" placeholder="Add a series by title" required><button>Add</button></form>
+  <button id="imp">Import</button>
+  <button id="opts" class="icon" title="Settings">⚙</button>
+</header>
+<nav id="tabs"></nav>
+<main id="grid" style="max-width:none;margin:0"></main>
+
+<section id="empty" hidden>
+  <h1>Your manga, in one place</h1>
+  <p class="mut">Everything stays in this browser. No account, no server.</p>
+  <div class="steps">
+    <div class="step"><h3>1 · Bring your list</h3><p>Already track on MyAnimeList or AniList? Import it and keep your place.</p><button id="imp2" class="primary">Import a list</button></div>
+    <div class="step"><h3>2 · Add your reading site</h3><p>Open a chapter on the site you read, click the toolbar icon, press “Add this site”.</p></div>
+    <div class="step"><h3>3 · Just read</h3><p>Your chapter is saved as you read. New chapters show up as a badge on the toolbar icon.</p></div>
+  </div>
+</section>
+
+<dialog id="dlg">
+  <h2>Import</h2>
+  <p>Series you already have keep your furthest chapter. You'll see a preview before anything is saved.</p>
+  <section>
+    <h3>MyAnimeList</h3>
+    <p>Export your manga list at <b>myanimelist.net/panel.php?go=export</b>, then choose the .xml or .xml.gz file.</p>
+    <input id="mal" type="file" accept=".xml,.gz">
+  </section>
+  <section>
+    <h3>AniList</h3>
+    <p>Type your username. Works for public lists, no login needed.</p>
+    <input id="alu" placeholder="AniList username"> <button id="alb">Fetch</button>
+  </section>
+  <section>
+    <h3>Manga Tracker backup</h3>
+    <p>A .json file exported from this extension.</p>
+    <input id="bak" type="file" accept=".json">
+  </section>
+  <p id="pv"></p>
+  <menu><button id="close">Close</button><button id="go" class="primary" hidden>Import</button></menu>
+</dialog>
+<div id="toast"></div>
+<script src="ui.js"></script>
+<script src="library.js"></script>
