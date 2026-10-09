@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Manga Tracker settings</title>
+<link rel="stylesheet" href="style.css">
+<main>
+  <h1>Manga Tracker</h1>
+  <h2>Settings</h2>
+  <label>Check for new chapters every <input id="interval" type="number" min="15" style="width:70px"> minutes (only while the browser is open)</label>
+  <label><input id="notify" type="checkbox"> Show notifications</label>
+  <label><input id="metadata" type="checkbox"> Look up covers and MangaDex links (sends the series title to AniList and MangaDex)</label>
+  <p class="mut" style="padding:0">Nothing else leaves your computer. No account, no analytics.</p>
+  <button id="checknow">Check now</button>
+
+  <h2>Backup</h2>
+  <button id="export">Export library (JSON)</button>
+  <p class="mut">To import a backup or a MyAnimeList / AniList list, use <a href="library.html#import">Import in the library</a>.</p>
+
+  <h2>Sites</h2>
+  <p class="mut" style="padding:0">Add a site from the toolbar popup while on it. Edit its rule here.</p>
+  <select id="host"></select> <button id="del">Remove site</button>
+  <textarea id="rule" spellcheck="false"></textarea>
+  <button id="save">Save rule</button> <span id="msg"></span>
+</main>
+<script src="options.js"></script>
